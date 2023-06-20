@@ -27,7 +27,7 @@ h1{
 }
 
 .column{
-    margin-left:180px;
+    margin:auto;
     margin-top:50px;
     display:grid;
     grid-template-columns: auto auto auto;
