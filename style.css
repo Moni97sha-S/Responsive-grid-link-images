@@ -18,7 +18,7 @@ h1{
     padding:30px;
     text-align: center;
     text-transform: uppercase;
-    background: linear-gradient(to right, #d030c0 0%, #330867 100%);
+    color: linear-gradient(to right, #d030c0 0%, #330867 100%);
     -webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
     background: linear-gradient(rgba(247, 61, 4, 0.836), rgba(244, 34, 188, 0.999));
