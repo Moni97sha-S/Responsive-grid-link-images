@@ -33,18 +33,21 @@ $(".image_").each(function(){
   myRow+=1;
   $(this).attr("id", myRow);
 });
-    function longRainShower() {
-  let amount = 150;
+    
+};
+function rainShower() {
+  let amount = 1500; // no.of droplets
   let body = document.querySelector("body");
   let count = 0;
   while (count < amount) {
     let droplets = document.createElement("i");
-    let size = Math.random() * 5;
+    let size = Math.random() * 1; // droplet thickness
     let posX = Math.floor(Math.random() * window.innerWidth);
     let posY = Math.floor(Math.random() * window.innerHeight);
     let delay = Math.random() * -20;
     let duration = Math.random() * 5;
-    droplets.style.width = `${0.1 + size}px`;
+    droplets.style.width = `${0.5 + size}px`; // droplet width
+    droplets.style.height = `${10.1 + size}px`; // droplet's height
     droplets.style.left = `${posX}px`;
     droplets.style.bottom = `${posY}px`;
     droplets.style.animationDelay = `${delay}s`;
@@ -52,9 +55,9 @@ $(".image_").each(function(){
     //document.body.insertAdjacentElement('beforeend', drop);
     //document.body.insertAdjacentElement('beforeend', drop);
     //document.body.prepend(drop);
-    window.document.body.prepend(droplets);
+    body.appendChild(droplets);
     count++;
   }
 };
-longRainShower()
+rainShower()
 });
