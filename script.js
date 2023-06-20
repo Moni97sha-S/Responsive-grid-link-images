@@ -1,5 +1,5 @@
 /*
-$(`img#${id}`).click(function(e){
+$(`[id]`).click(function(e){
     e.preventDefault();
     window.location = `https://en.wikipedia.org/wiki/${"[alt]"}`;
 }) */
