@@ -42,8 +42,8 @@ function rainShower() {
   while (count < amount) {
     let droplets = document.createElement("i");
     let size = Math.random() * 1; // droplet thickness
-    let posX = Math.floor(Math.random() * window.innerWidth);
-    let posY = Math.floor(Math.random() * window.innerHeight);
+    let posX = Math.floor(Math.random() * window.innerWidth); // screenWidth
+    let posY = Math.floor(Math.random() * window.innerHeight); // screenHeight
     let delay = Math.random() * -20;
     let duration = Math.random() * 5;
     droplets.style.width = `${0.5 + size}px`; // droplet width
@@ -52,10 +52,10 @@ function rainShower() {
     droplets.style.bottom = `${posY}px`;
     droplets.style.animationDelay = `${delay}s`;
     droplets.style.animationDuration = `${1 + duration}s`;
-    //document.body.insertAdjacentElement('beforeend', drop);
-    //document.body.insertAdjacentElement('beforeend', drop);
-    //document.body.prepend(drop);
-    body.appendChild(droplets);
+    //document.body.insertAdjacentElement('beforeend', droplets);
+    //document.body.insertAdjacentElement('beforeend', droplets);
+    window.document.body.prepend(droplets);
+    // body.appendChild(droplets);
     count++;
   }
 };
