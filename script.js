@@ -6,12 +6,12 @@ $(`img#${id}`).click(function(e){
 
 //$("span").element($(<a href=""></a>))
 $(document).ready(function(){
-const Item = ({ url, img}) => `
-  <a href="${url}" target="_blank" class="list-group-item">
-      <img src="${img}" />
-  </a>
+const Item = ({img,url}) => `
+<img class="image_" src="${img}" onclick="window.location.href='${url}'" />
 `;
+
 $('.list-items').html([
+
   { url: "https://en.wikipedia.org/wiki/Cricket", img: 'https://bsmedia.business-standard.com/_media/bs/img/article/2018-09/19/full/1537318309-6013.jpg'},
   { url: "https://en.wikipedia.org/wiki/Badminton", img: 'https://img.freepik.com/premium-vector/badminton-player-smash-match-competition-sport-stadium-cartoon-illustration-vector_201904-955.jpg?w=2000'},
   { url: "https://en.wikipedia.org/wiki/Tennis", img: 'https://upload.wikimedia.org/wikipedia/commons/9/94/2013_Australian_Open_-_Guillaume_Rufin.jpg'},
@@ -26,4 +26,11 @@ $('.list-items').html([
   { url: "https://en.wikipedia.org/wiki/Rugby", img: 'https://images.unsplash.com/photo-1568629273035-78d3fea6506f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE1fHx8ZW58MHx8fHx8&w=1000&q=80'},
   
 ].map(Item).join(''));
+
+// Add id Dynamically
+let myRow=0;
+$(".image_").each(function(){
+  myRow+=1;
+  $(this).attr("id", myRow);
+});
 });
