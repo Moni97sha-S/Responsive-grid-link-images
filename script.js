@@ -1,17 +1,11 @@
-/*
-$(`[id]`).click(function(e){
-    e.preventDefault();
-    window.location = `https://en.wikipedia.org/wiki/${"[alt]"}`;
-}) */
 
-//$("span").element($(<a href=""></a>))
 $(document).ready(function(){
+
 const Item = ({img,url}) => `
 <img class="image_" src="${img}" onclick="window.location.href='${url}'" />
 `;
 
 $('.list-items').html([
-
   { url: "https://en.wikipedia.org/wiki/Cricket", img: 'https://bsmedia.business-standard.com/_media/bs/img/article/2018-09/19/full/1537318309-6013.jpg'},
   { url: "https://en.wikipedia.org/wiki/Badminton", img: 'https://img.freepik.com/premium-vector/badminton-player-smash-match-competition-sport-stadium-cartoon-illustration-vector_201904-955.jpg?w=2000'},
   { url: "https://en.wikipedia.org/wiki/Tennis", img: 'https://upload.wikimedia.org/wikipedia/commons/9/94/2013_Australian_Open_-_Guillaume_Rufin.jpg'},
@@ -27,21 +21,23 @@ $('.list-items').html([
   
 ].map(Item).join(''));
 
-// Add id Dynamically
+// Add IDs Dynamically
 let myRow=0;
 $(".image_").each(function(){
   myRow+=1;
   $(this).attr("id", myRow);
 });
-    function rainShower() {
+    
+// Rain Effect
+function rainShower() {
   let amount = 1500; // no.of droplets
   let body = document.querySelector("body");
   let count = 0;
   while (count < amount) {
     let droplets = document.createElement("i");
     let size = Math.random() * 1; // droplet thickness
-    let posX = Math.floor(Math.random() * window.innerWidth); // screenWidth
-    let posY = Math.floor(Math.random() * window.innerHeight); // screenHeight
+    let posX = Math.floor(Math.random() * window.innerWidth);
+    let posY = Math.floor(Math.random() * window.innerHeight);
     let delay = Math.random() * -20;
     let duration = Math.random() * 5;
     droplets.style.width = `${0.5 + size}px`; // droplet width
@@ -50,14 +46,17 @@ $(".image_").each(function(){
     droplets.style.bottom = `${posY}px`;
     droplets.style.animationDelay = `${delay}s`;
     droplets.style.animationDuration = `${1 + duration}s`;
-    //document.body.insertAdjacentElement('beforeend', droplets);
-    //document.body.insertAdjacentElement('beforeend', droplets);
-    window.document.body.prepend(droplets);
-    // body.appendChild(droplets);
+    //document.body.insertAdjacentElement('beforeend', drop);
+    //document.body.insertAdjacentElement('beforeend', drop);
+    //document.body.prepend(drop);
+    body.appendChild(droplets);
     count++;
   }
 };
 rainShower()
 });
 
+// var $colour = $("#text").text();
+// $colour = $colour.css({'background': "linear-gradient(to right, #121FCF 0%, #CF1512 100%)"});
+// $("#text").text($colour);
 
