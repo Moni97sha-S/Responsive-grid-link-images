@@ -33,9 +33,7 @@ $(".image_").each(function(){
   myRow+=1;
   $(this).attr("id", myRow);
 });
-    
-};
-function rainShower() {
+    function rainShower() {
   let amount = 1500; // no.of droplets
   let body = document.querySelector("body");
   let count = 0;
@@ -61,3 +59,5 @@ function rainShower() {
 };
 rainShower()
 });
+
+
