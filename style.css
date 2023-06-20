@@ -12,7 +12,6 @@ body{
     animation: gradientAnimation 10s ease infinite;
     scroll-behavior:smooth;
     height: 100vh;
-    overflow: hidden;
 }
 
 
